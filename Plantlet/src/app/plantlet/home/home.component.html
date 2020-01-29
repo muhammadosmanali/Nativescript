@@ -1,0 +1,11 @@
+<ns-action-bar [showBackButton]="false"  title="Home"></ns-action-bar>
+<ScrollView>
+<FlexboxLayout flexDirection="column" alignItems="center" justifyContent="center">
+    <Image *ngIf="myImage" [src]="myImage" stretch="aspectFill" height="50%" width="50%"></Image>
+    <Button class="btn btn-primary" text="Upload Image" (tap)="onSelectImage()" [isEnabled]="!isLoading"></Button>
+    <StackLayout *ngIf="prediction && !isLoading">
+        <Label [text]="pre" *ngFor="let pre of prediction" ></Label>
+    </StackLayout>
+    <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+</FlexboxLayout>
+</ScrollView>

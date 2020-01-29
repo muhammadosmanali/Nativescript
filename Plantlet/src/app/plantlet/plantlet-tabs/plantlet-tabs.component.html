@@ -1,0 +1,21 @@
+<TabView androidTabsPosition="bottom"
+         androidSelectedTabHighlightColor="white"
+         selectedTabTextColor="white"
+         *ngIf="!isLoading"
+>
+    <TabViewItem></TabViewItem>
+    <StackLayout *tabItem="{iconSource: 'res://home1'}">
+        <page-router-outlet name="home"></page-router-outlet>
+    </StackLayout>
+    <StackLayout *tabItem="{iconSource: 'res://community1'}">
+        <page-router-outlet name="community"></page-router-outlet>
+    </StackLayout>
+    <StackLayout *tabItem="{iconSource: 'res://you1'}">
+        <page-router-outlet name="you"></page-router-outlet>
+    </StackLayout>
+</TabView>
+<FlexboxLayout justifyContent="center" alignItems="center" *ngIf="isLoading">
+    <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+</FlexboxLayout>
+
+

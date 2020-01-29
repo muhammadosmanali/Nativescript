@@ -1,0 +1,27 @@
+<ns-action-bar title="Add Post" [showBackButton]="true" [hasMenu]="false"></ns-action-bar>
+<FlexboxLayout flexDirection="column" alignItems="center" justifyContent="center">
+    <Image *ngIf="imageAddress" [src]="imageAddress" stretch="aspectFill" height="50%" width="80%"></Image>
+    <Button text="Select Picture" class="btn btn-primary" width="80%" (tap)="onSelectPicture()"></Button>
+
+    <StackLayout class="form" [formGroup]="form">
+        <StackLayout class="input-field">
+            <Label class="label" text="Description" [ngClass]="{invalid: false}"></Label>
+            <TextView
+                    class="input"
+                    returnKeyType="next"
+                    [autocorrect]="false"
+                    autocapitalizationType="none"
+                    formControlName="description"
+                    #desc
+            ></TextView>
+            <Label
+                    *ngIf="false"
+                    text="Please enter a valid email."
+                    class="invalid"
+            ></Label>
+        </StackLayout>
+    </StackLayout>
+
+    <Button text="Post" [isEnabled]="form.valid" class="btn btn-primary btn-rounded-lg" (tap)="onAddPost()"></Button>
+
+</FlexboxLayout>

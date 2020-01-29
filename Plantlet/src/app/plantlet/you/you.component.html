@@ -1,0 +1,38 @@
+<ns-action-bar [showBackButton]="false" title="You"></ns-action-bar>
+
+<GridLayout
+    columns="*,*,*"
+    rows="*,*,*,*,*,*"
+>
+    <StackLayout colSpan="3" rowSpan="3" class="background"></StackLayout>
+    <Label row="1" col="1" class="circle"></Label>
+
+    <StackLayout row="3" rowSpan="1" colSpan="3" class="background"></StackLayout>
+    <Label [color]="lblColor" row="3" col="0" text="Username:" class="lbl"></Label>
+
+    <StackLayout row="3" col="1" colSpan="2" class="txt" *ngIf="isEditMode">
+        <GridLayout>
+            <TextField  text="Usman Ali" ></TextField>
+        </GridLayout>
+    </StackLayout>
+    <Label row="3" col="1" colSpan="2" text="Usman Ali" class="lbl" *ngIf="!isEditMode"></Label>
+
+    <StackLayout row="4" rowSpan="1" colSpan="3" class="background"></StackLayout>
+
+    <Label [color]="lblColor" row="4" col="0" text="E-Mail:" class="lbl"></Label>
+
+    <StackLayout row="4" col="1" colSpan="2" class="txt" *ngIf="isEditMode">
+        <GridLayout>
+            <TextField text="muausman111@gmail.com"></TextField>
+        </GridLayout>
+    </StackLayout>
+    <Label row="4" col="1" colSpan="2" text="muausman111@gmail.com" class="lbl" *ngIf="!isEditMode"></Label>
+
+    <Button class="btn btn-primary btn-rounded-lg" row="5" [colSpan]="colSpan" [text]="isEditMode ? 'Save' : 'Edit'" (tap)="onEdit()"></Button>
+    <Button class="btn btn-flat" text="Cancel" row="5" col="2" (tap)="onCancel()" *ngIf="isEditMode"></Button>
+
+</GridLayout>
+
+
+
+

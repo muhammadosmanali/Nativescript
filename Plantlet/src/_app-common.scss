@@ -1,0 +1,64 @@
+@import "~nativescript-theme-core/scss/light";
+@import "./theme/colors";
+
+$btn-color: $primary;
+
+@import "~nativescript-theme-core/scss/index";
+
+ActionBar {
+  background: $primary;
+  color: $white;
+}
+
+.drawer-container {
+  background: linear-gradient(140deg, $primary, $secondary);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20;
+}
+
+.fa {
+  font-family: 'FontAwesome', 'Font-Awesome';
+}
+
+* {
+  font-family: 'Oswald', 'Oswald-Regular', 'Oswald-Bold';
+}
+
+.form {
+
+  .input-field {
+    width: 80%;
+
+    .label {
+      color: $primary;
+      font-weight: bold;
+      margin-bottom: 15;
+      margin-top: 5;
+    }
+
+    .input {
+      border-bottom-color: $primary;
+      border-bottom-width: 2;
+      width: 100%;
+      margin-bottom: 5;
+    }
+
+    .ng-touched.ng-invalid {
+      color: red;
+      border-bottom-color: red;
+    }
+  }
+}
+
+.invalid {
+  color: red;
+}
+
+.btn-flat {
+  background: transparent;
+  border-color: transparent;
+  border-width: 1;
+  color: $primary;
+}

@@ -1,0 +1,43 @@
+<ns-action-bar  [showBackButton]="false" title="Community"></ns-action-bar>
+<GridLayout class="animate-fadeInUp-delay-0ms">
+    <ListView [items]="posts" class="list-group">
+        <ng-template let-post="item" let-i="index">
+            <StackLayout>
+                <GridLayout rows="auto, auto, auto, auto, auto" columns="64, *" class="post-content">
+                    <Image
+                            row="0"
+                            col="0"
+                            rowSpan="2"
+                            [src]="'http://10.0.2.2:5000' + post.post_image"
+                            stretch="aspectFill"
+                            class="postImageSmall"
+                            loadMode="async"
+                    ></Image>
+
+                    <Label row="0" col="1" class="postAuthorName" [text]=""></Label>
+
+                    <Label row="1" col="1" class="postDateSmall" [text]="post.post_date"></Label>
+
+                    <Label class="postTitle" row="2" col="0" colSpan="2" [text]="post.description"></Label>
+
+                    <Image row="3" col="0" colSpan="2" [src]="'http://10.0.2.2:5000' + post.post_image" stretch="aspectFill"></Image>
+
+                    <GridLayout row="4" col="0" colSpan="2" rows="*" columns="*,*">
+                        <Label row="0" col="0" [text]="iconLike" class="icon-post fa" verticalAlignment="center"></Label>
+                        <Label row="0" col="0" [text]="post.likes" class="text-icon-post"></Label>
+
+                        <Label row="0" col="1" [text]="iconDisLike" class="icon-post fa"></Label>
+                        <Label row="0" col="1" [text]="post.dis_likes" class="text-icon-post"></Label>
+
+                    </GridLayout>
+
+                </GridLayout>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+    <FlexboxLayout justifyContent="flex-end" height="70" width="100%" id="addButtonContainer" left="0">
+        <Button class="add-button"  text="+" (tap)="onAddPost()"></Button>
+    </FlexboxLayout>
+</GridLayout>
+
+

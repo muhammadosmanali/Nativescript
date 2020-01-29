@@ -1,0 +1,9 @@
+<!-- https://docs.nativescript.org/angular/core-concepts/angular-navigation.html#page-router-outlet -->
+<RadSideDrawer>
+    <FlexboxLayout tkDrawerContent class="drawer-container">
+        <Button class="btn btn-primary btn-rounded-lg" text="Logout" (tap)="onLogout()"></Button>
+    </FlexboxLayout>
+    <StackLayout tkMainContent>
+        <page-router-outlet></page-router-outlet>
+    </StackLayout>
+</RadSideDrawer>

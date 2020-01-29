@@ -1,0 +1,73 @@
+@import "../../../theme/_colors.scss";
+
+.background {
+  background: rgba(12,148,99, 0.7);
+  border-radius: 10;
+  margin-top: 10;
+  margin-right: 10;
+  margin-left: 10;
+}
+
+.form {
+  width: 100%;
+  margin-left: 30;
+  margin-right: 30;
+
+  .input-field {
+    margin-bottom: 20;
+
+    .input {
+      font-size: 20;
+      placeholder-color: $primary;
+    }
+  }
+}
+
+.btn-primary {
+  height: 50;
+  font-size: 20;
+  font-weight: 600;
+}
+
+.header {
+  font-size: 25;
+  text-align: center;
+  color: $primary;
+  font-weight: 600;
+  margin-bottom: 70;
+  letter-spacing: 0.2;
+}
+
+.profile {
+  color: $primary;
+  font-size: 34;
+  border-bottom-width: 2;
+  border-bottom-color: $primary;
+}
+
+.circle {
+  width: 100;
+  height: 100;
+  border-radius: 100%;
+  border-width: 2;
+  border-color: $primary;
+  background: white;
+  margin-top: 20;
+}
+
+.first {
+  margin-top: 20;
+}
+
+.lbl {
+  font-size: 20;
+  color: Black;
+  text-align: center;
+  margin-top: 35;
+}
+
+.txt {
+  width: 50%;
+  color: white;
+  border-bottom-color: white;
+}

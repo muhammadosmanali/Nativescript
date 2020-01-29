@@ -1,0 +1,63 @@
+@import "../../../theme/colors";
+
+.list-group {
+  background-color: #E8E8E8;
+}
+
+.post-content {
+  margin-top: 16;
+  padding-top: 16;
+  background-color: #ffffff;
+}
+
+.postImageSmall {
+  width: 40;
+  height: 40;
+  border-radius: 40;
+  border-width: 0.5;
+  border-color: #c4c4c4;
+}
+
+.postDateSmall {
+  font-size: 14;
+  color: #858585;
+}
+
+.postAuthorName {
+  font-size: 17;
+  color: #000;
+  margin-top: 2;
+}
+
+.postTitle {
+  font-size: 17;
+  color: #000;
+  padding: 10;
+}
+
+.icon-post {
+  font-size: 18;
+  color: #2aa198;
+  padding: 12 0;
+  text-align: center;
+  margin-left: -24;
+}
+
+.text-icon-post {
+  font-size: 12;
+  color: #1aa3ff;
+  margin-left: 16;
+  text-align: center;
+  padding: 12 0; /* ios: padding: 8 0*/
+}
+
+.add-button {
+  background: linear-gradient(100deg, $primary, $secondary);
+  width: 70;
+  height: 70;
+  font-size: 50;
+  padding-top: -8;
+  border-radius: 50%;
+  color: #fff;
+  margin-right: 15;
+}
