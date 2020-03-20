@@ -1,0 +1,56 @@
+<ns-action-bar title="Current Challenge" [showBackButton]="false">
+  <ActionItem
+    ios.position="right"
+    android.position="actionBar"
+    nsRouterLink="/challenges/replace"
+    pageTransition="slideLeft"
+  >
+    <Label text="&#xf0fe;" class="fa" ios:class="fa p-5" android:class="fa p-10" android:fontSize="24"></Label
+  ></ActionItem>
+  <ActionItem
+    ios.position="right"
+    android.position="actionBar"
+    nsRouterLink="/challenges/edit"
+    pageTransition="slideLeft"
+    *ngIf="currentChallenge"
+  >
+    <Label text="&#xf044;" ios:class="fa p-5" android:class="fa p-10" android:fontSize="24"></Label
+  ></ActionItem>
+</ns-action-bar>
+<ScrollView>
+  <FlexboxLayout class="page" >
+    <StackLayout *ngIf="!currentChallenge">
+      <Label text="No Challenge Found!"></Label>
+      <Button class="btn btn-primary" text="Create One!" nsRouterLink="/challenges/replace" pageTransition="slideLeft"></Button>
+    </StackLayout>
+    <StackLayout *ngIf="currentChallenge">
+      <Label class="h2 text-center" [text]="currentChallenge.title"></Label>
+      <Label class="body text-center" [text]="currentChallenge.description"></Label>
+    </StackLayout>
+    <GridLayout
+            rows="auto,*,*,*,*,*"
+            columns="*,*,*,*,*,*,*"
+            *ngIf="currentChallenge"
+    >
+      <Label
+              *ngFor="let weekDay of weekDays; let i=index"
+              [text]="weekDay"
+              row="0"
+              [col]="i"
+              class="text-center week-day-label"
+              width="100%"
+      ></Label>
+
+      <FlexboxLayout
+              [ngClass]="{'not-settable': !getIsSettable(day.dayInMonth), 'completed': day.status === 1, 'failed': day.status === 2}"
+              class="day"
+              *ngFor="let day of currentChallenge.days; let i=index"
+              [row]="getRow(i, day)"
+              [col]="day.dayInWeek"
+              (tap)="onChangeStatus(day)"
+      >
+        <Label [text]="day.dayInMonth"></Label>
+      </FlexboxLayout>
+    </GridLayout>
+  </FlexboxLayout>
+</ScrollView>

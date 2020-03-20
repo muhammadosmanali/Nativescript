@@ -1,0 +1,100 @@
+@import '~nativescript-theme-core/scss/light';
+@import "theme/colors";
+
+$btn-color: $primary;
+
+@import '~nativescript-theme-core/scss/index';
+
+ActionBar {
+  background: $primary;
+  color: white;
+}
+
+.form {
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+
+  .input-field {
+    width: 80%;
+
+    .label {
+      color: $primary;
+      font-weight: bold;
+      font-family: 'Oswald', 'Oswald-Regular', 'Oswald-Bold';
+
+    }
+
+    .label.invalid {
+      color: red;
+    }
+
+    .input {
+      border-bottom-width: 2;
+      border-bottom-color: $primary;
+      width: 100%;
+      color: black;
+    }
+
+    .ng-invalid.ng-touched {
+      border-bottom-color: red;
+      color: red;
+    }
+
+  }
+}
+
+.drawer-container {
+  background: linear-gradient(140deg, #2b0c72, #5c3fa0);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20;
+
+  .btn {
+    width: 80%;
+    font-size: 24;
+    height: 45;
+  }
+}
+
+.btn-flat {
+  background: transparent;
+  border-color: transparent;
+  border-width: 1;
+  color: $primary;
+}
+
+.h2 {
+  font-weight: bold;
+  color: $primary;
+  font-family: 'Oswald', 'Oswald-Regular', 'Oswald-Bold';
+}
+
+.fa {
+  font-family: 'FontAwesome','Font-Awesome';
+}
+
+.invalid {
+  color: red;
+}
+
+
+
+//.form-control {
+//    border-bottom-color: #7c015d;
+//    border-bottom-width: 2;
+//    margin: 5 0;
+//    font-size: 20;
+//    padding: 8 4;
+//}
+//
+
+
+/*.btn {*/
+/*    border-width: 1;*/
+/*    width: 100%;*/
+/*    border-radius: 30%;*/
+/*    margin: 5 0;*/
+/*    border-color: #7c015d;*/
+/*}*/
